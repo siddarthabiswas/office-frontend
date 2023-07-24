@@ -1,0 +1,120 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: darkgray;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 6vh;
+    background-color: rgb(0, 48, 73);
+    position: fixed;
+    width: 100%;
+    transition: all .3s linear;
+}
+
+.changeNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 5vh;
+    transition: all .3s linear;
+    position: fixed;
+    width: 100%;
+    background-color: rgb(0 0 0 / 82%);
+    z-index: 1;
+}
+
+.nav_brand {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: aliceblue !important;
+}
+
+.nav_menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+    margin-bottom: 0px;
+}
+
+.nav_toggler div {
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    background-color: darkgray;
+    transition: all .5s ease;
+}
+
+.nav_link {
+    color: white;
+}
+
+.nav_toggler {
+    cursor: pointer;
+    display: none;
+}
+
+.active {
+    color: tomato;
+}
+
+@media screen and (max-width:768px) {
+    .nav_toggler {
+        display: block;
+    }
+
+    .nav_menu {
+        position: fixed;
+        top: 7vh;
+        right: 0;
+        width: 50%;
+        height: 50vh;
+        background-color: rgb(0, 28, 73);
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: all .5s ease;
+        margin: 0px;
+        padding: 0px;
+        z-index: 2 !important;
+    }
+}
+
+/* nav Active */
+.nav_active {
+    transform: translateY(0);
+}
+
+/* toggole icon animation */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-4px, 5px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-4px, -5px);
+}
